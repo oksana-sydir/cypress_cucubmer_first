@@ -1,4 +1,4 @@
-import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("I open the website", () => {
     cy.visit("https://www.saucedemo.com/"); // Replace with your website URL
@@ -10,8 +10,8 @@ When("I enter my username {string} and password {string}", (username, password) 
     cy.get('input[name="password"]').type(password);
 });
 
-And("I click the login button", () => {
-    cy.get('button[type="submit"]').click();
+When("I click the login button", () => {
+    cy.get('#login-button').click();
 });
 
 Then("I should be logged in", () => {
